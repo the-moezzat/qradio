@@ -1,1 +1,1 @@
-# QRadio(react-version) | Quran all time
+# QRadio(react-version) | Holy Quran all the time
