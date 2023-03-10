@@ -14,6 +14,10 @@ module.exports = {
       animation: {
         shimmer: "shimmer 1.5s infinite",
       },
+      gridTemplateColumns: {
+        // Simple 16 column grid
+        16: "repeat(16, minmax(0, 1fr))",
+      },
     },
   },
   plugins: [],

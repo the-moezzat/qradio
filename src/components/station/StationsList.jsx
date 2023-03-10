@@ -1,22 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFetchAllStationsQuery } from "../../store";
 import Skeleton from "../Skelton";
 import StationListItem from "./StationListItem";
+import Error from "./Error";
 
 export default function StationsList() {
-  const { data, error, isLoading } = useFetchAllStationsQuery("eng");
+  const [currentStation, setCurrentStation] = useState({});
+
+  const { data, error, isLoading, refetch } = useFetchAllStationsQuery("eng");
 
   // const content = isLoading ? console.log("Loading") : console.log(data.radios);
 
   return (
-    <div className="scroll overflow-y-scroll h-full">
+    <div className="scroll overflow-y-scroll h-[90%]">
       {isLoading ? (
-        <Skeleton times={4} className="h-[68px] rounded-2xl mr-2" />
+        <Skeleton times={6} className="h-[58px] rounded-2xl mr-2" />
       ) : error ? (
-        <div>error</div>
+        <Error clickAction={refetch} />
       ) : (
         data.map((station) => (
-          <StationListItem key={station.id} name={station.name} />
+          <StationListItem
+            key={station.id}
+            station={station}
+            selected={station.id === currentStation.id}
+            onClick={() => {
+              setCurrentStation(station);
+            }}
+          />
         ))
       )}
     </div>
