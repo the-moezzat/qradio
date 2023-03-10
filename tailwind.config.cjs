@@ -18,6 +18,9 @@ module.exports = {
         // Simple 16 column grid
         16: "repeat(16, minmax(0, 1fr))",
       },
+      gridTemplateRows: {
+        left: "min-content 1fr min-content",
+      },
     },
   },
   plugins: [],
