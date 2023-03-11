@@ -30,7 +30,7 @@ export default function StationListItem({ station, selected, onClick }) {
         {isRunning ? (
           <Pause weight="fill" color="#ffffff" />
         ) : (
-          <Play weight="fill" color="#27272a" />
+          <Play weight="fill" color={selected ? "#ffffff" : "#27272a"} />
         )}
       </div>
       <p className="color text-2xl break-all">{station.name}</p>
