@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 function Dropdown() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedLang, setSelectedLang] = useState({});
   const { data, isLoading, error } = useFetchSupportedLanguagesQuery();
 
   const languageEl = useRef();
@@ -24,7 +23,6 @@ function Dropdown() {
 
   const handleChangeLanguage = (language) => {
     dispatch(changeLanguage(language));
-    // setSelectedLang(language);
     setIsOpen(false);
   };
 
@@ -48,19 +46,19 @@ function Dropdown() {
           {isLoading ? (
             <div className="px-3 py-1 rounded-md">Loading...</div>
           ) : (
-            data.language.map((language) => {
-              const selected = language.id === selectedLang.id;
+            data.language.map((languageEl) => {
+              const selected = languageEl.id === language.id;
               return (
                 <div
-                  key={language.id}
+                  key={languageEl.id}
                   className={`px-3 py-1 rounded-md flex items-center justify-between ${
                     selected && "bg-gray-100 text-gray-900"
                   }`}
                   onClick={() => {
-                    handleChangeLanguage(language);
+                    handleChangeLanguage(languageEl);
                   }}
                 >
-                  {language.native}
+                  {languageEl.native}
                   {selected && <Check weight="bold" />}
                 </div>
               );
