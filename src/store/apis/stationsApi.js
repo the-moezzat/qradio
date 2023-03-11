@@ -13,11 +13,8 @@ export const stationsApi = createApi({
       fetchAllStations: builder.query({
         query: (language) => {
           return {
-            url: "/radios",
+            url: language,
             method: "GET",
-            params: {
-              language,
-            },
           };
         },
         transformResponse(response, meta, arg) {
@@ -25,8 +22,18 @@ export const stationsApi = createApi({
           return stations;
         },
       }),
+
+      fetchSupportedLanguages: builder.query({
+        query: () => {
+          return {
+            url: "/languages",
+            method: "GET",
+          };
+        },
+      }),
     };
   },
 });
 
-export const { useFetchAllStationsQuery } = stationsApi;
+export const { useFetchAllStationsQuery, useFetchSupportedLanguagesQuery } =
+  stationsApi;

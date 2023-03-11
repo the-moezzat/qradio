@@ -4,18 +4,26 @@ const appSlice = createSlice({
   name: "app",
   initialState: {
     language: {
+      id: "2",
       language: "English",
-      nativeName: "English",
+      native: "English",
+      surah: "https://www.mp3quran.net/api/v3/suwar?language=eng",
+      rewayah: "https://www.mp3quran.net/api/v3/riwayat?language=eng",
+      reciters: "https://www.mp3quran.net/api/v3/reciters?language=eng",
+      radios: "https://www.mp3quran.net/api/v3/radios?language=eng",
+      tafasir: "https://www.mp3quran.net/api/v3/tafasir?language=eng",
     },
-    queryLink: "https://mp3quran.net/api/v3/radios?language=eng ",
+    currentStation: {},
   },
   reducers: {
     changeLanguage(state, action) {
-      state.language.language = action.payload.language;
-      state.language.nativeName = action.payload.native;
-      state.queryLink = action.payload.radios;
+      state.language = action.payload;
+    },
+    changeCurrentStation(state, action) {
+      state.currentStation = action.payload;
     },
   },
 });
 
-export const { changeLanguage } = appSlice.actions;
+export const { changeLanguage, changeCurrentStation } = appSlice.actions;
+export const appReducer = appSlice.reducer;

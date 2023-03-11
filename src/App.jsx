@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="container max-w-[1366px] mx-auto px-3 grid items-center  h-screen">
       <div className="grid grid-cols-16 grid-rows-left gap-2 w-full">
-        <div className="bg-blue-500 col-span-9 ">
+        <div className="col-span-9 ">
           <Header />
         </div>
         <div className="bg-green-500 col-span-9 ">

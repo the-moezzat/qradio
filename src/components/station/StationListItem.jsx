@@ -33,7 +33,7 @@ export default function StationListItem({ station, selected, onClick }) {
           <Play weight="fill" color="#27272a" />
         )}
       </div>
-      <p className="color text-2xl">{station.name}</p>
+      <p className="color text-2xl break-all">{station.name}</p>
     </div>
   );
 }
