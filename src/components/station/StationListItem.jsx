@@ -1,22 +1,25 @@
 import { Play, Pause } from "@phosphor-icons/react";
+import { useSelector, useDispatch } from "react-redux";
+import { setIsRunning } from "../../store";
 import { useState, useEffect } from "react";
 
 export default function StationListItem({ station, selected, onClick }) {
-  const [isRunning, setIsRunning] = useState(selected);
+  const dispatch = useDispatch();
+  const isRunning = useSelector((state) => state.app.isRunning);
 
   useEffect(() => {
-    setIsRunning(selected);
+    dispatch(setIsRunning(selected));
   }, [selected]);
 
   const handleClick = () => {
     if (selected) return;
-    setIsRunning(true);
+    dispatch(setIsRunning(true));
     onClick();
   };
 
   const handleBtnClick = () => {
     if (!selected) return;
-    setIsRunning(!isRunning);
+    dispatch(setIsRunning(!isRunning));
   };
 
   return (
@@ -27,7 +30,7 @@ export default function StationListItem({ station, selected, onClick }) {
       onClick={handleClick}
     >
       <div className="p-2 rounded-full bg-current" onClick={handleBtnClick}>
-        {isRunning ? (
+        {isRunning && selected ? (
           <Pause weight="fill" color="#ffffff" />
         ) : (
           <Play weight="fill" color={selected ? "#ffffff" : "#27272a"} />

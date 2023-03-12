@@ -18,4 +18,8 @@ export {
   useFetchAllStationsQuery,
   useFetchSupportedLanguagesQuery,
 } from "./apis/stationsApi";
-export { changeLanguage, changeCurrentStation } from "./slices/appSlice";
+export {
+  changeLanguage,
+  changeCurrentStation,
+  setIsRunning,
+} from "./slices/appSlice";

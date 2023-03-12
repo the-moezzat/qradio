@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import ControlBtns from "./ControlBtns";
 
 export default function Controller() {
   const currentStation = useSelector((state) => state.app.currentStation);
@@ -9,9 +10,11 @@ export default function Controller() {
       <h6 className="text-lg uppercase tracking-tight text-gray-700 mb-3 ">
         Playing now
       </h6>
-      <p className="text-5xl font-bold text-zinc-800">
-        {currentStation ? currentStation.name : "--Choose station--"}
+      <p className="text-5xl font-bold text-zinc-800 mb-6 tracking-tighter">
+        {currentStation?.name || "--Choose station--"}
+        {/* {currentStation ? currentStation.name : "--Choose station--"} */}
       </p>
+      <ControlBtns />
     </div>
   );
 }

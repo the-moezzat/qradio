@@ -14,6 +14,7 @@ const appSlice = createSlice({
       tafasir: "https://www.mp3quran.net/api/v3/tafasir?language=eng",
     },
     currentStation: {},
+    isRunning: false,
   },
   reducers: {
     changeLanguage(state, action) {
@@ -22,8 +23,12 @@ const appSlice = createSlice({
     changeCurrentStation(state, action) {
       state.currentStation = action.payload;
     },
+    setIsRunning(state, action) {
+      state.isRunning = action.payload;
+    },
   },
 });
 
-export const { changeLanguage, changeCurrentStation } = appSlice.actions;
+export const { changeLanguage, changeCurrentStation, setIsRunning } =
+  appSlice.actions;
 export const appReducer = appSlice.reducer;
