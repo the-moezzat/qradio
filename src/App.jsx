@@ -10,7 +10,7 @@ function App() {
         <div className="col-span-9 ">
           <Header />
         </div>
-        <div className="bg-green-500 col-span-9 ">
+        <div className="col-span-9 justify-items-center self-center">
           <Controller />
         </div>
         <div className="bg-yellow-500 col-span-9 ">
