@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { changeCurrentStation } from "../store";
 
@@ -21,7 +21,7 @@ export default function FavList() {
         return (
           station && (
             <div
-              className="w-40 h-36 rounded-3xl bg-orange-500 flex-shrink-0 cursor-pointer p-3 flex items-end break-words text-2xl font-bold text-white overflow-hidden"
+              className=" pattern w-40 h-32 rounded-3xl bg-zinc-900 flex-shrink-0 flex-grow-0 cursor-pointer p-3 flex items-end text-xl font-bold text-white overflow-hidden"
               onClick={() => handleClick(station)}
               kay={station?.id}
             >
