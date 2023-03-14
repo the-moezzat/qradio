@@ -1,15 +1,10 @@
 import { Play, Pause } from "@phosphor-icons/react";
 import { useSelector, useDispatch } from "react-redux";
 import { setIsRunning } from "../../store";
-import { useState, useEffect } from "react";
 
 export default function StationListItem({ station, selected, onClick }) {
   const dispatch = useDispatch();
   const isRunning = useSelector((state) => state.app.isRunning);
-
-  useEffect(() => {
-    dispatch(setIsRunning(selected));
-  }, [selected]);
 
   const handleClick = () => {
     if (selected) return;
