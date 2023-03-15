@@ -15,6 +15,7 @@ const appSlice = createSlice({
     },
     currentStation: {},
     isRunning: false,
+    favoriteList: JSON.parse(localStorage.getItem("favorite")) || {},
   },
   reducers: {
     changeLanguage(state, action) {
@@ -26,9 +27,22 @@ const appSlice = createSlice({
     setIsRunning(state, action) {
       state.isRunning = action.payload;
     },
+    addToFav(state, action) {
+      state.favoriteList[action.payload.id] = action.payload;
+      localStorage.setItem("favorite", JSON.stringify(state.favoriteList));
+    },
+    removeFromFav(state, action) {
+      state.favoriteList[action.payload.id] = undefined;
+      localStorage.setItem("favorite", JSON.stringify(state.favoriteList));
+    },
   },
 });
 
-export const { changeLanguage, changeCurrentStation, setIsRunning } =
-  appSlice.actions;
+export const {
+  changeLanguage,
+  changeCurrentStation,
+  setIsRunning,
+  addToFav,
+  removeFromFav,
+} = appSlice.actions;
 export const appReducer = appSlice.reducer;

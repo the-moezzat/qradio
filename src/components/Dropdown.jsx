@@ -28,7 +28,7 @@ function Dropdown() {
 
   return (
     <div
-      className="min-w-[130px] cursor-pointer relative text-lg"
+      className="min-w-[130px] cursor-pointer relative text-lg text-zinc-700"
       ref={languageEl}
     >
       <div
