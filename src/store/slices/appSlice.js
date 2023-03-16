@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { stationsApi } from "../apis/stationsApi";
 
 const appSlice = createSlice({
   name: "app",
@@ -16,6 +17,7 @@ const appSlice = createSlice({
     currentStation: {},
     isRunning: false,
     favoriteList: JSON.parse(localStorage.getItem("favorite")) || {},
+    stations: [],
   },
   reducers: {
     changeLanguage(state, action) {
@@ -35,6 +37,14 @@ const appSlice = createSlice({
       state.favoriteList[action.payload.id] = undefined;
       localStorage.setItem("favorite", JSON.stringify(state.favoriteList));
     },
+  },
+  extraReducers: (builder) => {
+    builder.addMatcher(
+      stationsApi.endpoints.fetchAllStations.matchFulfilled,
+      (state, action) => {
+        state.stations = action.payload;
+      }
+    );
   },
 });
 

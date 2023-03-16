@@ -23,7 +23,6 @@ export default function FavList() {
   return (
     <div className=" hori-scrollbar flex gap-4 w-full overflow-x-auto">
       {favoriteList.map((station) => {
-        console.log(station.id);
         return (
           station && (
             <div

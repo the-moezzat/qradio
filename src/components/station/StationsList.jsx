@@ -15,8 +15,6 @@ export default function StationsList() {
 
   const { data, error, isFetching, refetch } = useFetchAllStationsQuery(radios);
 
-  // const content = isLoading ? console.log("Loading") : console.log(data.radios);
-
   return (
     <div className="scroll overflow-y-scroll h-[90%]">
       {isFetching ? (
