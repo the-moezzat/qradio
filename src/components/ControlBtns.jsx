@@ -31,6 +31,8 @@ export default function ControlBtns() {
   };
 
   const handleShuffling = () => {
+    if (!stations.length) return;
+
     dispatch(
       changeCurrentStation(
         stations[Math.floor(Math.random() * stations.length)]
