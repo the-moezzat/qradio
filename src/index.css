@@ -11,7 +11,7 @@
         rgba(52, 58, 64, 0.35),
         rgba(52, 58, 64, 0.35)
       ),
-      url(../public/imgs/background.jpg);
+      url(../public/imgs/masjid.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -33,6 +33,10 @@
   ::-webkit-scrollbar-thumb {
     background: #343a40;
     border-radius: 10px;
+  }
+
+  .hori-scrollbar::-webkit-scrollbar {
+    height: 8px;
   }
 
   .pattern {
