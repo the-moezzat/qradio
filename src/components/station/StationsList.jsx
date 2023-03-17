@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import Skeleton from "../Skelton";
 import StationListItem from "./StationListItem";
 import Error from "./Error";
-import { useFetchAllStationsQuery, changeCurrentStation } from "../../store";
+import {
+  useFetchAllStationsQuery,
+  changeCurrentStation,
+  setIsLoading,
+} from "../../store";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function StationsList() {
@@ -29,6 +33,7 @@ export default function StationsList() {
             selected={station.id === currentStation.id}
             onClick={() => {
               dispatch(changeCurrentStation(station));
+              dispatch(setIsLoading(true));
             }}
           />
         ))

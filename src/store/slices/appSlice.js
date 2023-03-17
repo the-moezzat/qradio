@@ -16,6 +16,7 @@ const appSlice = createSlice({
     },
     currentStation: {},
     isRunning: false,
+    isLoading: false,
     favoriteList: JSON.parse(localStorage.getItem("favorite")) || {},
     stations: [],
   },
@@ -28,6 +29,9 @@ const appSlice = createSlice({
     },
     setIsRunning(state, action) {
       state.isRunning = action.payload;
+    },
+    setIsLoading(state, action) {
+      state.isLoading = action.payload;
     },
     addToFav(state, action) {
       state.favoriteList[action.payload.id] = action.payload;
@@ -52,6 +56,7 @@ export const {
   changeLanguage,
   changeCurrentStation,
   setIsRunning,
+  setIsLoading,
   addToFav,
   removeFromFav,
 } = appSlice.actions;

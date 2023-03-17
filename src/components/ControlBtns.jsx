@@ -1,8 +1,15 @@
-import { Heart, Pause, Play, Shuffle } from "@phosphor-icons/react";
+import {
+  CircleNotch,
+  Heart,
+  Pause,
+  Play,
+  Shuffle,
+} from "@phosphor-icons/react";
 import { useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setIsRunning,
+  setIsLoading,
   addToFav,
   removeFromFav,
   changeCurrentStation,
@@ -11,9 +18,8 @@ import {
 export default function ControlBtns() {
   const audio = useRef();
   const dispatch = useDispatch();
-  const { isRunning, currentStation, favoriteList, stations } = useSelector(
-    (state) => state.app
-  );
+  const { isRunning, isLoading, currentStation, favoriteList, stations } =
+    useSelector((state) => state.app);
 
   const isFav = favoriteList[currentStation.id]?.id === currentStation.id;
 
@@ -47,6 +53,7 @@ export default function ControlBtns() {
         src={currentStation?.url}
         autoPlay={isRunning ? true : false}
         ref={audio}
+        onLoadedData={() => dispatch(setIsLoading(false))}
       ></audio>
       <button onClick={handleFavoriteBtn}>
         {isFav ? <Heart size={32} weight="fill" /> : <Heart size={32} />}
@@ -55,7 +62,11 @@ export default function ControlBtns() {
         className="bg-zinc-800 p-3 text-white rounded-full"
         onClick={handlePlayClick}
       >
-        {isRunning ? (
+        {isLoading ? (
+          <div className="animate-spin">
+            <CircleNotch size={32} />
+          </div>
+        ) : isRunning ? (
           <Pause size={32} weight="fill" />
         ) : (
           <Play size={32} weight="fill" />
