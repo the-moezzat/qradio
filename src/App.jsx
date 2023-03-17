@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="container max-w-[1366px] mx-auto px-6 grid items-center  h-screen">
       <div className=" relative grid grid-cols-16 grid-rows-left gap-x-8 gap-y-4 w-full">
-        <div className="absolute inset-0 -translate-x-1/2 -translate-y-1/2 bg-green-400 blur-[200px] w-[450px] h-[450px] rounded-full -z-50"></div>
+        <div className="absolute inset-0 -translate-x-1/2 -translate-y-1/2 bg-green-300 blur-[200px] w-[450px] h-[450px] rounded-full -z-50"></div>
         <div className="col-span-9 ">
           <Header />
         </div>

@@ -15,6 +15,7 @@ const appSlice = createSlice({
       tafasir: "https://www.mp3quran.net/api/v3/tafasir?language=eng",
     },
     currentStation: {},
+    searchTerm: "",
     isRunning: false,
     isLoading: false,
     favoriteList: JSON.parse(localStorage.getItem("favorite")) || {},
@@ -32,6 +33,9 @@ const appSlice = createSlice({
     },
     setIsLoading(state, action) {
       state.isLoading = action.payload;
+    },
+    setSearchTerm(state, action) {
+      state.searchTerm = action.payload;
     },
     addToFav(state, action) {
       state.favoriteList[action.payload.id] = action.payload;
@@ -57,6 +61,7 @@ export const {
   changeCurrentStation,
   setIsRunning,
   setIsLoading,
+  setSearchTerm,
   addToFav,
   removeFromFav,
 } = appSlice.actions;

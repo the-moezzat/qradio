@@ -13,11 +13,18 @@ export default function StationsList() {
   const dispatch = useDispatch();
 
   const {
+    searchTerm,
     currentStation,
     language: { radios },
   } = useSelector((state) => state.app);
 
   const { data, error, isFetching, refetch } = useFetchAllStationsQuery(radios);
+
+  const listData =
+    data &&
+    data.filter(
+      (station) => station.name.toLowerCase().indexOf(searchTerm) !== -1
+    );
 
   return (
     <div className="scroll overflow-y-scroll h-[90%]">
@@ -26,7 +33,7 @@ export default function StationsList() {
       ) : error ? (
         <Error clickAction={refetch} />
       ) : (
-        data.map((station) => (
+        listData.map((station) => (
           <StationListItem
             key={station.id}
             station={station}
