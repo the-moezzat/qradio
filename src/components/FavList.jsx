@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { changeCurrentStation, setIsRunning } from "../store";
+import { changeCurrentStation, setIsLoading, setIsRunning } from "../store";
 
 export default function FavList() {
   const { favoriteList: favorites, currentStation } = useSelector(
@@ -12,6 +12,7 @@ export default function FavList() {
 
     dispatch(changeCurrentStation(station));
     dispatch(setIsRunning(true));
+    dispatch(setIsLoading(true));
   };
 
   const favoriteList = [];
