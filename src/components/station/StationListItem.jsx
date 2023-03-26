@@ -27,7 +27,7 @@ export default function StationListItem({ station, selected, onClick }) {
       <div className="p-2 rounded-full bg-current" onClick={handleBtnClick}>
         {isLoading && selected ? (
           <div className="animate-spin">
-            <CircleNotch color="#ffffff" />
+            <CircleNotch color="#ffffff" weight={"bold"} />
           </div>
         ) : isRunning && selected ? (
           <Pause weight="fill" color="#ffffff" />

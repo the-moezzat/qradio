@@ -35,5 +35,4 @@ export const stationsApi = createApi({
   },
 });
 
-export const { useFetchAllStationsQuery, useFetchSupportedLanguagesQuery } =
-  stationsApi;
+export const { useFetchAllStationsQuery, useFetchSupportedLanguagesQuery } = stationsApi;

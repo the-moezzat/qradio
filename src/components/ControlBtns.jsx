@@ -51,9 +51,11 @@ export default function ControlBtns() {
     <div className="flex w-full items-center justify-center gap-14 text-zinc-800">
       <audio
         src={currentStation?.url}
-        autoPlay={isRunning ? true : false}
+        autoPlay={!!isRunning}
         ref={audio}
         onLoadedData={() => dispatch(setIsLoading(false))}
+        onPause={() => dispatch(setIsRunning(false))}
+        onPlaying={() => dispatch(setIsRunning(true))}
       ></audio>
       <button onClick={handleFavoriteBtn}>
         {isFav ? <Heart size={32} weight="fill" /> : <Heart size={32} />}
@@ -61,10 +63,11 @@ export default function ControlBtns() {
       <button
         className="bg-zinc-800 p-3 text-white rounded-full"
         onClick={handlePlayClick}
+
       >
         {isLoading ? (
           <div className="animate-spin">
-            <CircleNotch size={32} />
+            <CircleNotch size={32} weight={"bold"} />
           </div>
         ) : isRunning ? (
           <Pause size={32} weight="fill" />
