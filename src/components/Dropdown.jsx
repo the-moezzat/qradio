@@ -42,7 +42,7 @@ function Dropdown() {
         </div>
       </div>
       {isOpen && (
-        <div className="px-1 bg-white shadow-md rounded-md absolute bottom-0 translate-y-full w-full h-60 overflow-y-scroll text-gray-600">
+        <div className="px-1 bg-white/70 backdrop-blur-md shadow-md rounded-md absolute bottom-0 translate-y-full w-full h-60 overflow-y-scroll text-gray-600 z-40">
           {isLoading ? (
             <div className="px-3 py-1 rounded-md">Loading...</div>
           ) : (

@@ -26,7 +26,7 @@ export default function Search() {
           <input
             type="text"
             placeholder="Search"
-            className="pl-11 py-2 rounded-xl focus-within:outline-none text-lg text-zinc-700 bg-white/60 focus:bg-white transition-all w-[200px] lg:w-[150px]"
+            className="placeholder:text-zinc-500 pl-11 md:pl-10 py-2 rounded-xl focus-within:outline-none text-lg text-zinc-800 bg-white/60 focus:bg-white transition-all w-[200px] lg:w-[170px]"
             value={searchTerm}
             onChange={handleChange}
           />
