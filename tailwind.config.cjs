@@ -1,7 +1,13 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    screens: {
+      ...defaultTheme.screens,
+      'lg': {'max': '1080px'},
+    },
     fontFamily: {
       sans: ["sen", "sans-serif"],
     },

@@ -17,16 +17,16 @@ export default function Search() {
   };
 
   return (
-    <div>
+    <div >
       <form onSubmit={handleSubmit}>
         <div className="relative flex">
-          <div className="absolute top-1/2 left-2 -translate-y-1/2 text-zinc-700">
-            <MagnifyingGlass size={24} />
+          <div className="absolute top-1/2 left-2 -translate-y-1/2 text-zinc-700 text-2xl">
+            <MagnifyingGlass />
           </div>
           <input
             type="text"
             placeholder="Search"
-            className="pl-11 py-2 rounded-xl focus-within:outline-none text-lg text-zinc-700 bg-white/60 focus:bg-white transition-all"
+            className="pl-11 py-2 rounded-xl focus-within:outline-none text-lg text-zinc-700 bg-white/60 focus:bg-white transition-all w-[200px]"
             value={searchTerm}
             onChange={handleChange}
           />

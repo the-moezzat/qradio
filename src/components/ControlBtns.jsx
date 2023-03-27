@@ -45,6 +45,7 @@ export default function ControlBtns() {
       )
     );
     dispatch(setIsRunning(true));
+    dispatch(setIsLoading(true));
   };
 
   return (
