@@ -47,7 +47,7 @@
 @layer base {
   @media (max-width: 1080px) {
   html {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   }

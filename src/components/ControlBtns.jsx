@@ -49,7 +49,7 @@ export default function ControlBtns() {
   };
 
   return (
-    <div className="flex w-full items-center justify-center gap-14 text-zinc-800">
+    <div className="flex w-full items-center justify-center gap-14 text-zinc-800 text-3xl">
       <audio
         src={currentStation?.url}
         autoPlay={!!isRunning}
@@ -59,7 +59,7 @@ export default function ControlBtns() {
         onPlaying={() => dispatch(setIsRunning(true))}
       ></audio>
       <button onClick={handleFavoriteBtn}>
-        {isFav ? <Heart size={32} weight="fill" /> : <Heart size={32} />}
+        {isFav ? <Heart weight="fill" /> : <Heart size={32} />}
       </button>
       <button
         className="bg-zinc-800 p-3 text-white rounded-full"
@@ -68,16 +68,16 @@ export default function ControlBtns() {
       >
         {isLoading ? (
           <div className="animate-spin">
-            <CircleNotch size={32} weight={"bold"} />
+            <CircleNotch weight={"bold"} />
           </div>
         ) : isRunning ? (
-          <Pause size={32} weight="fill" />
+          <Pause weight="fill" />
         ) : (
-          <Play size={32} weight="fill" />
+          <Play weight="fill" />
         )}
       </button>
       <button onClick={handleShuffling}>
-        <Shuffle size={32} weight={"fill"} />
+        <Shuffle weight={"fill"} />
       </button>
     </div>
   );
