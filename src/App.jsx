@@ -30,15 +30,17 @@ function App() {
                         <Menu onClick={handleMenuToggle}/>
                     </div>
                 </div>
-                <div className={`${isMenuOpen? "md:hidden" : ""} col-span-9 justify-items-center self-center lg:col-span-8 md:col-span-full  md:px-6`}>
+                <div
+                    className={`${isMenuOpen ? "md:hidden" : ""} col-span-9 justify-items-center self-center lg:col-span-8 md:col-span-full  md:px-6`}>
                     <Controller/>
                 </div>
-                <div className={`${isMenuOpen? "md:hidden" : ""} col-span-9  md:col-span-full lg:col-span-8  md:pl-6 md:mb-6`}>
+                <div
+                    className={`${isMenuOpen ? "md:hidden" : ""} col-span-9  md:col-span-full lg:col-span-8  md:pl-6 md:mb-6`}>
                     {showFavorite && <Favorite/>}
                 </div>
                 <div
                     className=
-                        {`md:row-start-2 md:row-span-full h-full col-span-7 col-start-10 row-span-full lg:col-start-9 lg:col-span-8  md:col-start-1 md:col-span-full md:row-start-4 ${isMenuOpen ? "" : "md:hidden"}`}
+                        {`md:row-start-2 md:row-span-full h-full col-span-7 col-start-10 row-span-full lg:col-start-9 lg:col-span-8  md:col-start-1 md:col-span-full animate-slideUp ${isMenuOpen ? "md:bottom-0 md:relative" : "md:hidden"}`}
                 >
                     <Station/>
                 </div>

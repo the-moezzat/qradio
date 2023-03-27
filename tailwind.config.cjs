@@ -17,9 +17,14 @@ module.exports = {
         shimmer: {
           "100%": { transform: "translateX(100%)" },
         },
+        "slideUp" : {
+          "0%" : {"bottom": "-100vh"},
+          "100%": {"bottom": '0'},
+        }
       },
       animation: {
         shimmer: "shimmer 1.5s infinite",
+        slideUp: "slideUp 0.2s ease-out"
       },
       gridTemplateColumns: {
         // Simple 16 column grid
