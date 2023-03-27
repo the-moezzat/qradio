@@ -5,8 +5,9 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     screens: {
-      ...defaultTheme.screens,
+      // ...defaultTheme.screens,
       'lg': {'max': '1080px'},
+      'md': {'max': '750px'},
     },
     fontFamily: {
       sans: ["sen", "sans-serif"],

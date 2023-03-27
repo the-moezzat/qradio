@@ -22,7 +22,7 @@ export default function FavList() {
   }
 
   return (
-    <div className=" hori-scrollbar flex gap-4 w-full overflow-x-auto">
+    <div className=" hori-scrollbar flex gap-4 w-full overflow-x-auto pb-2">
       {favoriteList.map((station) => {
         return (
           station && (

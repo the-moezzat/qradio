@@ -1,18 +1,19 @@
 import React, {useState} from 'react';
 import classNames from 'classnames';
 
-function Menu() {
+function Menu({onClick}) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     function handleClick() {
         setIsMenuOpen(!isMenuOpen);
+        onClick()
     }
 
     return (
         <div className={"flex items-center text-lg text-gray-700 cursor-pointer"} onClick={handleClick}>
             {isMenuOpen? "Main" : <p>Stations</p>}
             <div
-                className="w-10 h-10 flex flex-col justify-center items-end"
+                className="w-9 h-10 flex flex-col justify-center items-end"
             >
                 <div
                     className={classNames(

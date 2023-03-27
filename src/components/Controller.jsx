@@ -7,12 +7,11 @@ export default function Controller() {
 
   return (
     <div>
-      <h6 className="text-lg uppercase tracking-tight text-gray-700 mb-3 ">
+      <h6 className="text-lg uppercase tracking-wide text-gray-700 mb-3 ">
         Playing now
       </h6>
-      <p className="text-5xl font-bold text-zinc-800 mb-6 tracking-tighter">
+      <p className="text-5xl font-bold text-zinc-800 mb-6 tracking-tighter ">
         {currentStation?.name || "--Choose station--"}
-        {/* {currentStation ? currentStation.name : "--Choose station--"} */}
       </p>
       <ControlBtns />
     </div>

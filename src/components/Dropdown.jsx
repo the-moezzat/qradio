@@ -28,11 +28,11 @@ function Dropdown() {
 
   return (
     <div
-      className="min-w-[130px] cursor-pointer relative text-lg text-zinc-700"
+      className="min-w-[130px] cursor-pointer relative text-lg text-zinc-700 lg:min-w-[95px]"
       ref={languageEl}
     >
       <div
-        className="flex items-center gap-2"
+        className="flex items-center gap-2 p-2"
         onClick={() => setIsOpen(!isOpen)}
       >
         <GlobeSimple />
@@ -42,7 +42,7 @@ function Dropdown() {
         </div>
       </div>
       {isOpen && (
-        <div className="bg-white shadow-md rounded-md absolute bottom-0 translate-y-full w-full h-60 overflow-y-scroll text-gray-600">
+        <div className="px-1 bg-white shadow-md rounded-md absolute bottom-0 translate-y-full w-full h-60 overflow-y-scroll text-gray-600">
           {isLoading ? (
             <div className="px-3 py-1 rounded-md">Loading...</div>
           ) : (
