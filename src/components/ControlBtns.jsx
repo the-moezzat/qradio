@@ -59,12 +59,11 @@ export default function ControlBtns() {
         onPlaying={() => dispatch(setIsRunning(true))}
       ></audio>
       <button onClick={handleFavoriteBtn}>
-        {isFav ? <Heart weight="fill" /> : <Heart size={32} />}
+        {isFav ? <Heart weight="fill" /> : <Heart />}
       </button>
       <button
         className="bg-zinc-800 p-3 text-white rounded-full"
         onClick={handlePlayClick}
-
       >
         {isLoading ? (
           <div className="animate-spin">
