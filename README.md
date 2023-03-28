@@ -14,6 +14,7 @@ Qradio is a simple web application that allows users to listen to the Quran anyt
 - Share stations with your friends (incoming)
 - Install the app in your phone using Progressive Web Application (PWA) (incoming)
 - Listen to specific sura with specific reciters (incoming)
+- Support for multiple languages.
 - And more ...
 
 ## Installation
